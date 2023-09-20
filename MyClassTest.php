@@ -46,6 +46,6 @@ class MyClassPerformanceTest extends PHPUnit\Framework\TestCase {
 
 class MyClassTest extends PHPUnit\Framework\TestCase {
 
- // 
+ // ..
 
 }
