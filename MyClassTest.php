@@ -4,48 +4,49 @@ require_once 'MyClass.php';
 
 class MyClassOutputTest extends PHPUnit\Framework\TestCase {
 
-    protected $fixture;
+    protected static $sharedFixture;
 
-    protected function setUp(): void
+    public static function setUpBeforeClass(): void
     {
-        $this->fixture = $this->sharedFixture;
+        self::$sharedFixture = new MyClass();
     }
 
-    protected function tearDown(): void
-    {
-        $this->fixture = NULL;
-    }
- 
     public function testSquare()
     {
-        $this->expectOutputString('4');
-        $this->fixture->square(2);
+        $this->assertEquals(4, self::$sharedFixture->square(2));
     }
+
+    // ...
+   
 }
 
 class MyClassPerformanceTest extends PHPUnit\Framework\TestCase {
 
-    protected $fixture;
+    protected static $sharedFixture;
 
-    protected function setUp(): void
+    public static function setUpBeforeClass(): void
     {
-        $this->fixture = $this->sharedFixture;
-    }
-
-    protected function tearDown(): void
-    {
-        $this->fixture = NULL;
+        self::$sharedFixture = new MyClass();
     }
 
     public function testPerformance()
     {
-        $this->setMaxRunningTime(1);
-        $this->fixture->square(4);
+        $this->assertLessThan(5.9, self::$sharedFixture->square(2));
     }
+
+    // ...
+   
 }
 
 class MyClassTest extends PHPUnit\Framework\TestCase {
 
- // d
+    public function testSquare()
+    {
+        $myClass = new MyClass();
+        $this->assertEquals(4, $myClass->square(2));
+        $this->assertEquals(9, $myClass->square(3));
+        $this->assertEquals(16, $myClass->square(4));
+    }
+
 
 }

@@ -1,1 +1,1 @@
-{"version":1,"defects":{"Warning":6},"times":{"Warning":0.002}}
+{"version":1,"defects":{"Warning":6,"MyClassTest::":4,"MyClassOutputTest::":4,"MyClassPerformanceTest::":4,"MyClassOutputTest::testSquare":3,"MyClassPerformanceTest::testPerformance":3,"MyClassTest::testAddition":4},"times":{"Warning":0.001,"MyClassTest::":0.007,"MyClassOutputTest::":0.001,"MyClassPerformanceTest::":0,"MyClassOutputTest::testSquare":0,"MyClassPerformanceTest::testPerformance":0,"MyClassTest::testAddition":0.002,"MyClassTest::testSquare":0.002}}
