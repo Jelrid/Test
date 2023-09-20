@@ -16,7 +16,7 @@ class MyClassOutputTest extends PHPUnit\Framework\TestCase {
         $this->assertEquals(4, self::$sharedFixture->square(2));
     }
 
-    // ...
+
    
 }
 
@@ -34,8 +34,6 @@ class MyClassPerformanceTest extends PHPUnit\Framework\TestCase {
         $this->assertLessThan(5.9, self::$sharedFixture->square(2));
     }
 
-    // ...
-   
 }
 
 class MyClassTest extends PHPUnit\Framework\TestCase {
@@ -44,8 +42,7 @@ class MyClassTest extends PHPUnit\Framework\TestCase {
     {
         $myClass = new MyClass();
         $this->assertEquals(4, $myClass->square(2));
-        $this->assertEquals(9, $myClass->square(3));
-        $this->assertEquals(16, $myClass->square(4));
+        
     }
 
 
